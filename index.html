@@ -6,46 +6,88 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Light Theme</title>
 <link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-<script>var __adobewebfontsappname__="dreamweaver"</script>
+
 <script src="http://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+ <script>
+function validateForm()
+{
+if (document.forms["myForm"]["name"].value==null || document.forms["myForm"]["name"].value=="")
+{
+alert("Name must be filled out");
+return false;
+}
+if (document.forms["myForm"]["phone"].value==null || document.forms["myForm"]["phone"].value=="")
+{
+alert("Phone must be filled out");
+return false;
+}
+if (document.forms["myForm"]["email"].value==null || document.forms["myForm"]["email"].value=="")
+{
+alert("Email must be filled out");
+return false;
+}
+return true;
+}
+</script>
+	
+	
+	
+	<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+	
+	
+	
+	
 </head>
 <body>
-<!-- Main Container -->
 <div class="container"> 
-  <!-- Navigation -->
   <header> <a href="https://www.linkedin.com/in/jkhgames">
 	  <h4 class="logo" >linkedin.com/in/jkhgames</h4></a>
     
     <nav>
       <ul>
-        <li><a href="#hero">HOME</a></li>
+        <li><a href="#relax">RELAX</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li> <a href="#contact">CONTACT</a></li>
+        <li> <a href="#games">GAMES</a></li>
       </ul>
     </nav>
+	
+	
+	
   </header>
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-	      <h1 class="hero_header">Jesse <span class="light">Honkanen</span></h1>
+  <section class="relax" id="relax">
+	      <h1 class="relax_header">Jesse <span class="light">Honkanen</span></h1>
     <p class="tagline">Game Designer</p>
 	  <div class="fullscreen-bg">
 	  <video loop muted autoplay poster="images/poster.PNG" class="fullscreen-bg_video">
 		  <source src="images/calmingocean.webm" type="video/webm">
 		  </video>
 	  </div>
+	  
+	  <audio controls autoplay loop>
+            <source src="music/Jazz.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+
 
   </section>
-  <!-- About Section -->
   <section class="about" id="about">
     <h2 class="hidden">About</h2>
-    <p class="text_column">Hello. Welcome to my web sight. I have gathered here information relevant to what I've been doing as a <b>Game Designer</b>. In other words, all that is presented to you here would be considered a portfolio. <i>A Game Design Portfolio</i>. This here document is very much a work in progress <i>as is my career</i> and I've purposefully opted to withhold a number of details. If you're a trusted party I'm showing this page to I would be happy to speak to you more in detail about the projects I've worked on, as well as share with you my CV. I am happy to have met you :-)</p> 
+    <p class="text_column">Hello. Welcome to my web sight. I have gathered here information relevant to what I've been doing as a <b>Game Designer</b>. In other words, all that is presented to you here would be considered a portfolio. <i>A Game Design Portfolio</i>. This here document is very much a work in progress <i>as is my career</i> and I've purposefully opted to withhold a number of details. If you're a trusted party I'm showing this page to I would be happy to speak to you more in detail about the projects I've worked on, as well as share with you my CV. Have a great day :-)</p> 
 
 	
 
@@ -55,13 +97,10 @@
 		  <h1 class="skillz">Relevant skills include:</h1>
   
 	</section>
-	<!-- Stats Gallery Section -->
-	
-	
   <div class="gallery">
     <div class="thumbnail">
 
-    <img src="images/machinations.png" height="300">
+    <a href="images/machinations.png"><img src="images/machinations.png" height="300"></a>
 
       <h4>Machinations</h4>
       <p>Affinity for prototype-model based design</p>
@@ -83,47 +122,176 @@
     </div>
   </div>
 	
-<section class="skillz">
+<section class="skillz" id="games">
 		  <h1 class="skillz">Some of the Games I've Made:</h1>
   
 	</section>
 
-  <!-- Parallax Section -->
   <section class="banner">
-<img src="images/parallaxhero.png">
+<img src="images/gamys.png">
   </section>
 	
 	  <section class="about">
     <h2 class="hidden">About</h2>
-    <p class="text_column">I've worked on a number of games including a full fledged card game (pictured right), a two-player co-op panic management <a href="https://www.youtube.com/watch?v=X1AuqSNsN2Q">Fantastic Train</a> (pictured left) as well as numerous game jam games (Real Time Tactics game <a href="https://kajakgames.itch.io/finlandia-game-jam-package-">Motitus</a> pictured in the middle). <a href="https://drive.google.com/file/d/0B7ZrEQgcy3qfTXhjRFBpYzdna2c/view?usp=sharing">There's also this magnificent Smash killer.</a></p>
+    <p class="text_column">I've worked on a number of games including a full fledged card game (pictured right), a two-player co-op panic management <a href="https://www.youtube.com/watch?v=X1AuqSNsN2Q">Fantastic Train</a> (pictured left) as well as numerous game jam games (Real Time Tactics game <a href="https://kajakgames.itch.io/finlandia-game-jam-package-">Motitus</a> pictured in the middle). <a href="https://drive.google.com/file/d/0B7ZrEQgcy3qfTXhjRFBpYzdna2c/view?usp=sharing">There's also this magnificent Smash killer.</a></p><br><br><br><br><br>
 
+
+	<table id="t01">
+  <tr>
+    <th>Game</th>
+    <th>Genre</th> 
+    <th>Status</th>
+  </tr>
+    <tr>
+    <td>Fantasy Card Game</td>
+    <td>Local 1 vs 1</td>
+    <td>Unreleased</td>
+  </tr>
+  <tr>
+    <td>Tatinhakkaus</td>
+    <td>Local 1 vs 1</td>
+    <td>Unreleased</td>
+  </tr>
+  <tr>
+    <td>Motitus</td>
+    <td>Real Time Tactics</td>
+    <td>Released</td>
+  </tr>
+  <tr>
+    <td>Fantastic Train</td>
+    <td>Local 2 player Co-op</td>
+    <td>Unreleased</td>
+  </tr>
+</table>
 	
 
   </section>
 	
-	
-  <!-- More Info Section -->
+
   <footer>
     <article class="footer_column">
       <h3>Frog Out!</h3>
-      <img src="images/frogoutlogo.png" width="400" height="371" class="cards" />
+      <a href="https://store.steampowered.com/app/921720/Frog_Out/"><img src="images/frogoutlogo.png" width="400" height="371" class="cards" /></a>
       <p>Working on this right now. They liked me posting their shit on imgur so much they took me on as a Game Designer. Go <a href="https://store.steampowered.com/app/921720/Frog_Out/">view Frog Out! on Steam</a></p>
     </article>
     <article class="footer_column">
-      <h3>Esports!</h3>
+      <h3>Other stuff!</h3>
       <img src="images/3spooky5me.png" alt="" width="400" height="371" class="cards"/>
       <p>I'm also running an esports organization for a Finnish IT-company PHZ Full Stack. <a href="https://team.phz.fi">Go check it out!</a> We're competing in CS:GO and Brawlhalla, latter of which <a href="https://www.is.fi/digitoday/esports/art-2000005904649.html">latter of which we are the reigning world champion for</a></p>
-    </article>
+    </article><br><br><br>
+	
+	
+	
+	
+	
+	<section class="about">
+
+	
+<section class="about">	
+	<article>
+  <pre class="candybox2">           ________
+      _,.-Y  |  |  Y-._
+  .-~"   ||  |  |  |   "-.
+  I" ""=="|" !""! "|"[]""|     _____
+  L__  [] |..------|:   _[----I" .-{"-.
+ I___|  ..| l______|l_ [__L]_[I_/r(=}=-P
+[L______L_[________]______j~  '-=c_]/=-^
+ \_I_j.--.\==I|I==_/.--L_]
+   [_((==)[`-----"](==)j
+      I--I"~~"""~~"I--I
+      |[]|         |[]|
+      l__j         l__j
+      |!!|         |!!|
+      |..|         |..|
+      ([])         ([])
+      ]--[         ]--[
+      [_L]         [_L]
+     /|..|\       /|..|\
+    `=}--{='     `=}--{='
+   .-^--r-^-.   .-^--r-^-.
+</pre>
+  
+</article><br><br>
+
+	</section>
+	<section class="about">
+	
+	<button onclick="getLocation()" id="button">???</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script>
+<br><br><br>
+	
+
+
+</section>
+<section class="about">
+	
+	
+	
+	<form name="myForm" onsubmit="return validateForm()" >
+	<fieldset>
+    <legend>Personal information:</legend>
+Name: <input type="text" name="name" /><br/>
+Phone: <input type="text" name="phone" /><br/>
+E-mail: <input type="text" name="email" /><br/>
+<input type="submit" value="Click to Submit" />
+  </fieldset>
+</form>
+	
+</section>
+
+	<div class="spinner">
+  <div class="double-bounce1"></div>
+  <div class="double-bounce2"></div>
+</div>
   </footer>
-  <!-- Footer Section -->
   <section class="footer_banner" id="contact">
     <h2 class="hidden">Footer Banner Section </h2>
-    <p class="hero_header">FOR THE LATEST NEWS &amp; UPDATES</p>
+    <p class="relax_header">FOR THE LATEST NEWS &amp; UPDATES</p>
     <div class="button"><a href="https://twitter.com/NObozdota">View my Tweeter</a></div>
-  </section>
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2018</div>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <img src="images/kitty.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88">
 </div>
-<!-- Main Container Ends -->
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div></section><br><br><br><br><br><br>
+
+  </section>
+
+  <div class="copyright">&copy;2018, "Jazz Brunch " Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/</div>
+</div>
+
 </body>
 </html>
